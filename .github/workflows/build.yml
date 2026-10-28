@@ -29,6 +29,8 @@ jobs:
       - name: Ikonka va vertikal rejim
         working-directory: app
         run: |
+          sudo apt-get update -y
+          sudo apt-get install -y imagemagick
           IM=$(command -v magick || command -v convert)
           for d in mdpi:48 hdpi:72 xhdpi:96 xxhdpi:144 xxxhdpi:192; do
             n=${d%%:*}; s=${d##*:}
